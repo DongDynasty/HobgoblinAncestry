@@ -1,4 +1,7 @@
-﻿using Dawnsbury.Core.Mechanics.Enumerations;
+﻿using Dawnsbury.Core.CharacterBuilder.Feats.Features;
+using Dawnsbury.Core.CharacterBuilder.FeatsDb.TrueFeatDb;
+using Dawnsbury.Core.Mechanics;
+using Dawnsbury.Core.Mechanics.Enumerations;
 using Dawnsbury.Modding;
 using System;
 using System.Collections.Generic;

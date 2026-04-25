@@ -81,6 +81,7 @@ public class Hobgoblin
     public static FeatName HobgoblinOnly_HobgoblinWeaponDiscipline = ModManager.RegisterFeatName(Loader.SotTPrepend + "_" + HobgoblinAncestry + "_HobgoblinWeaponDiscipline");
     public static FeatName HobgoblinOnly_Runtsage = ModManager.RegisterFeatName(Loader.SotTPrepend + "_" + HobgoblinAncestry + "_Runtsage");
     public static FeatName HobgoblinOnly_PrideInArms = ModManager.RegisterFeatName(Loader.SotTPrepend + "_" + HobgoblinAncestry + "_PrideInArms");
+    public static FeatName HobgoblinOnly_SquadTactics = ModManager.RegisterFeatName(Loader.SotTPrepend + "_" + HobgoblinAncestry + "_SquadTactics");
 
 
     //Main Loader
@@ -846,6 +847,61 @@ public class Hobgoblin
                             creature.AddQEffect(listener);
                         }
                     };
+                };
+            });
+
+        //adds the Hobgoblin Ancestry Feat "Cantorian Rejuvenation"
+        yield return new HobgoblinAncestryFeat("Squad Tactics",
+            "You are adept at working with your allies to surround an enemy.",
+            "If an enemy is within reach of you and at least two of your allies, that enemy is off-guard to you.", 9)
+            .WithPermanentQEffect("If an enemy is within reach of you and at least two of your allies, that enemy is off-guard to you.",
+            qEffectFeat =>
+            {
+
+                //get hobgoblin
+                Creature hobgoblin = qEffectFeat.Owner;
+
+                //effect
+                qEffectFeat.AfterYouTakeHostileAction = (qEffect, action) => {
+
+                    //entrance check
+                    if (!action.HasTrait(Trait.Strike) && !action.HasTrait(Trait.Melee))
+                    {
+                        return;
+                    }
+
+                    //get current battle
+                    TBattle CurrentBattle = qEffectFeat.Owner.Battle;
+                    int allies = 0;
+
+                    foreach (Creature creature in CurrentBattle.AllCreatures)
+                    {
+
+                        //entrance checks
+                        if (hobgoblin.EnemyOf(creature) || action.ChosenTargets == null || action.ChosenTargets.ChosenCreature == null || creature.PrimaryWeapon == null)
+                        {
+                            continue;
+                        }
+
+                        //set variables
+                        Item weapon = creature.PrimaryWeapon;
+                        Creature target = action.ChosenTargets.ChosenCreature;
+
+                        //if there is a viable ally,
+                        if (weapon.HasTrait(Trait.Melee) && weapon.DetermineReach(creature) >= creature.DistanceTo(target))
+                        {
+                            //increment ally count
+                            allies++;
+
+                            //if it reaches the threshold,
+                            if (allies >= 2)
+                            {
+                                //give the target flat-footed
+                                target.AddQEffect(QEffect.FlatFooted("Squad Tactics"));
+                                return;
+                            }
+                        }
+                    }
                 };
             });
     }
