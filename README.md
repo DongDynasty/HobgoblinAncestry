@@ -1,4 +1,4 @@
-# Hobgoblin
+# Hobgoblin Ancestry
 
 This mod adds the Hobgoblin ancestry. This was originally planned to release as apart of a larger "expansion" esque mod but seeing how that will take a lot longer, I decided to release the individual pieces separately. Enjoy!
 
