@@ -4,27 +4,28 @@ This mod adds the Hobgoblin ancestry. This was originally planned to release as 
 
 ## Implementation
 Heritages
-- Elfbane Hobgoblin
-- Runtboss Hobgoblin
-- Smokeworker Hobgoblin
-- Warrenbred Hobgoblin
+- [Elfbane Hobgoblin](https://2e.aonprd.com/Heritages.aspx?ID=320)
+- [Runtboss Hobgoblin](https://2e.aonprd.com/Heritages.aspx?ID=321)
+- [Smokeworker Hobgoblin](https://2e.aonprd.com/Heritages.aspx?ID=323)
+- [Warrenbred Hobgoblin](https://2e.aonprd.com/Heritages.aspx?ID=325)
 
 Feats (1)
-- Cantorian Reinforcement (1)
-- Hobgoblin Lore (1)
-- Hobgoblin Weapon Familiarity (1)
-- Leech-Clip (1)
-- Remorseless Lash (1)
-- Stone Face (1)
-- Vigorous Health (1)
+- [Cantorian Reinforcement](https://2e.aonprd.com/Feats.aspx?ID=5569) (1)
+- [Hobgoblin Lore](https://2e.aonprd.com/Feats.aspx?ID=5570) (1)
+- [Hobgoblin Weapon Familiarity](https://2e.aonprd.com/Feats.aspx?ID=5571) (1)
+- [Leech-Clip](https://2e.aonprd.com/Feats.aspx?ID=5572) (1)
+- [Remorseless Lash](https://2e.aonprd.com/Feats.aspx?ID=5573) (1)
+- [Stone Face](https://2e.aonprd.com/Feats.aspx?ID=5575) (1)
+- [Vigorous Health](https://2e.aonprd.com/Feats.aspx?ID=5576) (1)
 
 Feats (5)
-- Agonizing Rebuke (5)
+- [Agonizing Rebuke](https://2e.aonprd.com/Feats.aspx?ID=5577) (5)
   - (Removed the frightened conditionals and ending because I didn't want to implement it LOL)
-- Formation Training (5)
-- Hobgoblin Weapon Discipline (5)
-- Runtsage (5)
+- [Formation Training}(https://2e.aonprd.com/Feats.aspx?ID=1032) (5)
+- [Hobgoblin Weapon Discipline](https://2e.aonprd.com/Feats.aspx?ID=1033) (5)
+- [Runtsage](https://2e.aonprd.com/Feats.aspx?ID=5580) (5)
 
 Feats (9)
-- Cantorian Rejuvenation (9)
-- Pride in Arms (9)
+- [Cantorian Rejuvenation](https://2e.aonprd.com/Feats.aspx?ID=5581) (9)
+- [Pride in Arms](https://2e.aonprd.com/Feats.aspx?ID=5583) (9)
+- [Squad Tactics](https://2e.aonprd.com/Feats.aspx?ID=5584) (9)
