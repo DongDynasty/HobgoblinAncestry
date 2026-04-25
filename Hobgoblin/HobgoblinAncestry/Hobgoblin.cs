@@ -400,7 +400,7 @@ public class Hobgoblin
                             return Task.CompletedTask;
                         });
                         action.Name = "Leech-Clip";
-                        action.Illustration = new ModdedIllustration("LeechClip.png");
+                        action.Illustration = IllustrationName.Scimitar;
                         action.ActionCost = 2;
                         action.Traits.Add(HobgoblinTrait);
                         action.Description = "Make a melee Strike with a weapon from the flail group.\n\n" +
@@ -735,7 +735,7 @@ public class Hobgoblin
                             else return null;
                         });
 
-                        return new CombatAction(qEffectThis.Owner, new ModdedIllustration("CantorianRejuvenation.png"), "Cantorian Rejuvenation",
+                        return new CombatAction(qEffectThis.Owner, IllustrationName.Heal, "Cantorian Rejuvenation",
                             [HobgoblinTrait, Trait.Ancestry, Trait.Healing],
                             "You recover 4d6 Hit Points and gain 10 temporary Hit Points for 1 minute. At 15th level, you instead recover 6d6 HP and gain 15 temporary HP.",
                             target)

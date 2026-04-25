@@ -27,7 +27,7 @@ public class PhalanxPiercer
     public static int Price = 10;
 
     //weapon illustration
-    public static Illustration PhalanxPiercerIllustration = new ModdedIllustration("PhalanxPiercer.png");
+    public static Illustration PhalanxPiercerIllustration = new ModdedIllustration("HobgoblinAssets/Phalanx_Piercer.png");
 
     //weapon traits
     public static Trait PhalanxPiercerTrait;

@@ -27,7 +27,7 @@ public class CapturingSpetum
     public static int Price = 9;
 
     //weapon illustration
-    public static Illustration CapturingSpetumIllustration = new ModdedIllustration("CapturingSpetum.png");
+    public static Illustration CapturingSpetumIllustration = new ModdedIllustration("HobgoblinAssets/Capturing_Spetum.png");
 
     //weapon traits
     public static Trait CapturingSpetumTrait;
