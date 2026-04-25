@@ -29,3 +29,8 @@ Feats (9)
 - [Cantorian Rejuvenation](https://2e.aonprd.com/Feats.aspx?ID=5581) (9)
 - [Pride in Arms](https://2e.aonprd.com/Feats.aspx?ID=5583) (9)
 - [Squad Tactics](https://2e.aonprd.com/Feats.aspx?ID=5584) (9)
+
+Weapons
+- Breaching Pike
+- Capturing Spetum
+- Phalanx Piercer
