@@ -31,6 +31,6 @@ Feats (9)
 - [Squad Tactics](https://2e.aonprd.com/Feats.aspx?ID=5584) (9)
 
 Weapons
-- Breaching Pike
-- Capturing Spetum
-- Phalanx Piercer
+- [Breaching Pike](https://2e.aonprd.com/Weapons.aspx?ID=274)
+- [Capturing Spetum](https://2e.aonprd.com/Weapons.aspx?ID=469)
+- [Phalanx Piercer](https://2e.aonprd.com/Weapons.aspx?ID=337)
