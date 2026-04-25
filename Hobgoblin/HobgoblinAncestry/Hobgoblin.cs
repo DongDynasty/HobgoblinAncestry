@@ -11,6 +11,7 @@ using Dawnsbury.Core.CharacterBuilder.FeatsDb.TrueFeatDb.Archetypes.Agnostic;
 using Dawnsbury.Core.CharacterBuilder.Selections.Options;
 using Dawnsbury.Core.CharacterBuilder.Spellcasting;
 using Dawnsbury.Core.CombatActions;
+using Dawnsbury.Core.Coroutines.Options;
 using Dawnsbury.Core.Creatures;
 using Dawnsbury.Core.Creatures.Parts;
 using Dawnsbury.Core.Mechanics;
@@ -37,6 +38,7 @@ using System.ComponentModel;
 using System.Data;
 using System.Linq;
 using System.Net.NetworkInformation;
+using System.Reflection.Metadata.Ecma335;
 using System.Security;
 using System.Security.Cryptography.X509Certificates;
 using System.Text;
@@ -861,47 +863,61 @@ public class Hobgoblin
                 //get hobgoblin
                 Creature hobgoblin = qEffectFeat.Owner;
 
-                //effect
-                qEffectFeat.AfterYouTakeHostileAction = (qEffect, action) => {
-
-                    //entrance check
-                    if (!action.HasTrait(Trait.Strike) && !action.HasTrait(Trait.Melee))
+                qEffectFeat.StateCheck = delegate (QEffect qEffect)
+                {
+                    if (hobgoblin.PrimaryWeapon == null || !hobgoblin.PrimaryWeapon.HasTrait(Trait.Melee))
                     {
                         return;
                     }
 
-                    //get current battle
-                    TBattle CurrentBattle = qEffectFeat.Owner.Battle;
-                    int allies = 0;
-
-                    foreach (Creature creature in CurrentBattle.AllCreatures)
+                    //each enemy
+                    foreach (Tile tile in hobgoblin.FindThreatenedSquares())
                     {
-
-                        //entrance checks
-                        if (hobgoblin.EnemyOf(creature) || action.ChosenTargets == null || action.ChosenTargets.ChosenCreature == null || creature.PrimaryWeapon == null)
+                        if (tile.PrimaryOccupant == null)
                         {
                             continue;
                         }
 
-                        //set variables
-                        Item weapon = creature.PrimaryWeapon;
-                        Creature target = action.ChosenTargets.ChosenCreature;
+                        Creature target = tile.PrimaryOccupant;
 
-                        //if there is a viable ally,
-                        if (weapon.HasTrait(Trait.Melee) && weapon.DetermineReach(creature) >= creature.DistanceTo(target))
+                        if (hobgoblin == null || !hobgoblin.EnemyOf(target))
                         {
-                            //increment ally count
-                            allies++;
+                            continue;
+                        }
 
-                            //if it reaches the threshold,
-                            if (allies >= 2)
+                        //get current battle
+                        TBattle CurrentBattle = hobgoblin.Battle;
+                        int allies = 0;
+
+                        //each ally
+                        foreach (Creature ally in CurrentBattle.AllCreatures.Where(creature => !hobgoblin.EnemyOf(creature)))
+                        {
+                            if (ally.PrimaryWeapon == null || ally == hobgoblin)
                             {
-                                //give the target flat-footed
-                                target.AddQEffect(QEffect.FlatFooted("Squad Tactics"));
-                                return;
+                                continue;
+                            }
+
+                            //set variables
+                            Item weapon = ally.PrimaryWeapon;
+
+                            if (weapon.DetermineReach(ally) >= ally.DistanceTo(target))
+                            {
+                                //increment ally count
+                                allies++;
+
+                                if (allies >= 2)
+                                {
+                                    target.AddQEffect(new QEffect("Squad Tactics", "You're flat-footed to " + hobgoblin?.ToString() + ".", ExpirationCondition.Ephemeral, hobgoblin, IllustrationName.Flatfooted)
+                                    {
+                                        DoNotShowUpOverhead = true,
+                                        IsFlatFootedTo = (_, attacker, attack) => (attacker != hobgoblin) ? null : "Squad Tactics"
+                                    });
+
+                                    break;
+                                }
                             }
                         }
-                    }
+                    };
                 };
             });
     }

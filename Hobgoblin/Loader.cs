@@ -1,5 +1,8 @@
 ﻿using Dawnsbury.Core.CharacterBuilder.Feats.Features;
+using Dawnsbury.Core.CharacterBuilder.FeatsDb.Common;
 using Dawnsbury.Core.CharacterBuilder.FeatsDb.TrueFeatDb;
+using Dawnsbury.Core.CombatActions;
+using Dawnsbury.Core.Creatures;
 using Dawnsbury.Core.Mechanics;
 using Dawnsbury.Core.Mechanics.Enumerations;
 using Dawnsbury.Modding;
