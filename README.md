@@ -21,7 +21,7 @@ Feats (1)
 Feats (5)
 - [Agonizing Rebuke](https://2e.aonprd.com/Feats.aspx?ID=5577) (5)
   - (Removed the frightened conditionals and ending because I didn't want to implement it LOL)
-- [Formation Training}(https://2e.aonprd.com/Feats.aspx?ID=1032) (5)
+- [Formation Training](https://2e.aonprd.com/Feats.aspx?ID=1032) (5)
 - [Hobgoblin Weapon Discipline](https://2e.aonprd.com/Feats.aspx?ID=1033) (5)
 - [Runtsage](https://2e.aonprd.com/Feats.aspx?ID=5580) (5)
 
