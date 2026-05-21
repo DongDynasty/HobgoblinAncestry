@@ -27,7 +27,7 @@ public class BreachingPike
     public static int Price = 8;
 
     //weapon illustration
-    public static Illustration BreachingPikeIllustration = new ModdedIllustration("HobgoblinAssets/Breaching_Pike.png");
+    public static Illustration BreachingPikeIllustration = new ModdedIllustration("Breaching_Pike.png");
 
     //weapon traits
     public static Trait BreachingPikeTrait;
@@ -56,7 +56,6 @@ public class BreachingPike
                     Trait.Spear,
                     Trait.Razing,
                     Trait.Reach,
-                    Trait.TwoHanded,
                     Trait.Uncommon
                 ])
             .WithMainTrait(BreachingPikeTrait)
