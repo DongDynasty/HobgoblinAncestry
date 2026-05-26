@@ -433,10 +433,19 @@ public class Hobgoblin
                     {
                         var frightened = creature.FindQEffect(QEffectId.Frightened);
 
-                        if (frightened != null)
+                        if (frightened != null && frightened.Value == 1)
                         {
-                            frightened.CannotExpireThisTurn = true;
+                            creature.RemoveAllQEffects(qEffectThat => qEffectThat.Equals(frightened));
+
+                            var remoreselessLash = QEffect.Frightened(1).WithExpirationAtStartOfSourcesTurn(qEffectFeat.Owner, 0);
+
+                            remoreselessLash.DoNotShowUpOverhead = true;
+
+                            creature.AddQEffect(remoreselessLash);
+
                             creature.Overhead("Remorseless Lash!", Color.Black);
+
+
                         }
                     }
 
