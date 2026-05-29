@@ -213,8 +213,8 @@ public class Hobgoblin
                 //changes the active roll
                 qEffectFeat.AdjustActiveRollCheckResult = (qf, action, target, originalResult) =>
                 {
-                    //if the action has the intimidation trait,
-                    if ((action.HasTrait(Trait.Intimidation) || action.HasTrait(Trait.Fear)) && (originalResult.Equals(CheckResult.Success) || originalResult.Equals(CheckResult.CriticalFailure)))
+                    //if the action is demoralize,
+                    if (action.ActionId.Equals(ActionId.Demoralize) && (originalResult.Equals(CheckResult.Success) || originalResult.Equals(CheckResult.CriticalFailure)))
                     {
 
                         //increase the result by one step
