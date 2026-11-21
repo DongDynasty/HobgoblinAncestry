@@ -78,7 +78,7 @@ public class Hobgoblin
     public static FeatName HobgoblinOnly_ContorianReinforcement = ModManager.RegisterFeatName(Loader.SotTPrepend + "_" + HobgoblinAncestry + "_ContorianReinforcement", "Contorian Reinforcement");
     public static FeatName HobgoblinOnly_HobgoblinLore = ModManager.RegisterFeatName(Loader.SotTPrepend + "_" + HobgoblinAncestry + "_HobgoblinLore", "Hobgoblin Lore");
     public static FeatName HobgoblinOnly_HobgoblinWeaponFamiliarity = ModManager.RegisterFeatName(Loader.SotTPrepend + "_" + HobgoblinAncestry + "_HobgoblinWeaponFamiliarity", "Hobgoblin Weapon Familiarity");
-    public static FeatName HobgoblinOnly_LeechClip = ModManager.RegisterFeatName(Loader.SotTPrepend + "_" + HobgoblinAncestry + "_Leech-Clip", "Leech-Clip" + RulesBlock.GetIconTextFromNumberOfActions(2));
+    public static FeatName HobgoblinOnly_LeechClip = ModManager.RegisterFeatName(Loader.SotTPrepend + "_" + HobgoblinAncestry + "_Leech-Clip", "Leech-Clip" + " " + RulesBlock.GetIconTextFromNumberOfActions(2));
     public static FeatName HobgoblinOnly_RemorselessLash = ModManager.RegisterFeatName(Loader.SotTPrepend + "_" + HobgoblinAncestry + "_RemoreselessLash", "Remoreseless Lash");
     public static FeatName HobgoblinOnly_StoneFace = ModManager.RegisterFeatName(Loader.SotTPrepend + "_" + HobgoblinAncestry + "_StoneFace", "Stone Face");
     public static FeatName HobgoblinOnly_VigorousHealth = ModManager.RegisterFeatName(Loader.SotTPrepend + "_" + HobgoblinAncestry + "_VigorousHealth", "Vigorous Health");
@@ -87,7 +87,7 @@ public class Hobgoblin
     public static FeatName HobgoblinOnly_HobgoblinWeaponDiscipline = ModManager.RegisterFeatName(Loader.SotTPrepend + "_" + HobgoblinAncestry + "_HobgoblinWeaponDiscipline", "Hobgoblin Weapon Discipline");
     public static FeatName HobgoblinOnly_Runtsage = ModManager.RegisterFeatName(Loader.SotTPrepend + "_" + HobgoblinAncestry + "_Runtsage", "Runtsage");
     public static FeatName HobgoblinOnly_CantorianRejuvenation = ModManager.RegisterFeatName(Loader.SotTPrepend + "_" + HobgoblinAncestry + "_CantorianRejuvenation", "Cantorian Rejuvenation");
-    public static FeatName HobgoblinOnly_PrideInArms = ModManager.RegisterFeatName(Loader.SotTPrepend + "_" + HobgoblinAncestry + "_PrideInArms", "Pride in Arms " + RulesBlock.GetIconTextFromNumberOfActions(-2));
+    public static FeatName HobgoblinOnly_PrideInArms = ModManager.RegisterFeatName(Loader.SotTPrepend + "_" + HobgoblinAncestry + "_PrideInArms", "Pride in Arms " + " " + RulesBlock.GetIconTextFromNumberOfActions(-2));
     public static FeatName HobgoblinOnly_SquadTactics = ModManager.RegisterFeatName(Loader.SotTPrepend + "_" + HobgoblinAncestry + "_SquadTactics", "Squad Tactics");
 
 
