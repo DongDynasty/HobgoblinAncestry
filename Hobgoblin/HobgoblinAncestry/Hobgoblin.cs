@@ -78,7 +78,7 @@ public class Hobgoblin
     public static FeatName HobgoblinOnly_ContorianReinforcement = ModManager.RegisterFeatName(Loader.SotTPrepend + "_" + HobgoblinAncestry + "_ContorianReinforcement", "Contorian Reinforcement");
     public static FeatName HobgoblinOnly_HobgoblinLore = ModManager.RegisterFeatName(Loader.SotTPrepend + "_" + HobgoblinAncestry + "_HobgoblinLore", "Hobgoblin Lore");
     public static FeatName HobgoblinOnly_HobgoblinWeaponFamiliarity = ModManager.RegisterFeatName(Loader.SotTPrepend + "_" + HobgoblinAncestry + "_HobgoblinWeaponFamiliarity", "Hobgoblin Weapon Familiarity");
-    public static FeatName HobgoblinOnly_LeechClip = ModManager.RegisterFeatName(Loader.SotTPrepend + "_" + HobgoblinAncestry + "_Leech-Clip", "Leech-Clip" + " " + RulesBlock.GetIconTextFromNumberOfActions(2));
+    public static FeatName HobgoblinOnly_LeechClip = ModManager.RegisterFeatName(Loader.SotTPrepend + "_" + HobgoblinAncestry + "_Leech-Clip", "Leech-Clip");
     public static FeatName HobgoblinOnly_RemorselessLash = ModManager.RegisterFeatName(Loader.SotTPrepend + "_" + HobgoblinAncestry + "_RemoreselessLash", "Remoreseless Lash");
     public static FeatName HobgoblinOnly_StoneFace = ModManager.RegisterFeatName(Loader.SotTPrepend + "_" + HobgoblinAncestry + "_StoneFace", "Stone Face");
     public static FeatName HobgoblinOnly_VigorousHealth = ModManager.RegisterFeatName(Loader.SotTPrepend + "_" + HobgoblinAncestry + "_VigorousHealth", "Vigorous Health");
@@ -87,7 +87,7 @@ public class Hobgoblin
     public static FeatName HobgoblinOnly_HobgoblinWeaponDiscipline = ModManager.RegisterFeatName(Loader.SotTPrepend + "_" + HobgoblinAncestry + "_HobgoblinWeaponDiscipline", "Hobgoblin Weapon Discipline");
     public static FeatName HobgoblinOnly_Runtsage = ModManager.RegisterFeatName(Loader.SotTPrepend + "_" + HobgoblinAncestry + "_Runtsage", "Runtsage");
     public static FeatName HobgoblinOnly_CantorianRejuvenation = ModManager.RegisterFeatName(Loader.SotTPrepend + "_" + HobgoblinAncestry + "_CantorianRejuvenation", "Cantorian Rejuvenation");
-    public static FeatName HobgoblinOnly_PrideInArms = ModManager.RegisterFeatName(Loader.SotTPrepend + "_" + HobgoblinAncestry + "_PrideInArms", "Pride in Arms " + " " + RulesBlock.GetIconTextFromNumberOfActions(-2));
+    public static FeatName HobgoblinOnly_PrideInArms = ModManager.RegisterFeatName(Loader.SotTPrepend + "_" + HobgoblinAncestry + "_PrideInArms", "Pride in Arms");
     public static FeatName HobgoblinOnly_SquadTactics = ModManager.RegisterFeatName(Loader.SotTPrepend + "_" + HobgoblinAncestry + "_SquadTactics", "Squad Tactics");
 
 
@@ -381,6 +381,7 @@ public class Hobgoblin
             "on a critical hit). The penalty lasts for 1 round. It applies only if the target has a land Speed and depends on legs " +
             "or other targetable appendages to use its land Speed. As with all penalties to Speed, this can’t reduce a creature’s " +
             "Speed below 5 feet.", 1)
+            .WithActionCost(2)
             .WithPermanentQEffect("You are trained to capture deserters, or 'leeches.'", qEffect =>
             {
                 qEffect.ProvideStrikeModifier = delegate (Item item)
@@ -796,6 +797,7 @@ public class Hobgoblin
 
             "{b}Trigger:{b} An ally within 30 feet brings an enemy to 0 Hit Points. " +
             "The triggering ally gains temporary Hit Points equal to their Constitution modifier.", 9)
+            .WithActionCost(-2)
             .WithPermanentQEffect("An ally within 30 feet that brings an enemy to 0 Hit Points gains temporary Hit Points equal to their Constitution modifier",
             qEffectFeat =>
             {
