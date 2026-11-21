@@ -71,19 +71,24 @@ public class Hobgoblin
     public static string HobgoblinAncestry = "HobgoblinAncestryFeat";
 
     //feat names
-    public static FeatName HobgoblinOnly_ContorianReinforcement = ModManager.RegisterFeatName(Loader.SotTPrepend + "_" + HobgoblinAncestry + "_ContorianReinforcement");
-    public static FeatName HobgoblinOnly_HobgoblinLore = ModManager.RegisterFeatName(Loader.SotTPrepend + "_" + HobgoblinAncestry + "_HobgoblinLore");
-    public static FeatName HobgoblinOnly_HobgoblinWeaponFamiliarity = ModManager.RegisterFeatName(Loader.SotTPrepend + "_" + HobgoblinAncestry + "_HobgoblinWeaponFamiliarity");
-    public static FeatName HobgoblinOnly_LeechClip = ModManager.RegisterFeatName(Loader.SotTPrepend + "_" + HobgoblinAncestry + "_Leech-Clip");
-    public static FeatName HobgoblinOnly_RemorselessLash = ModManager.RegisterFeatName(Loader.SotTPrepend + "_" + HobgoblinAncestry + "_RemoreselessLash");
-    public static FeatName HobgoblinOnly_StoneFace = ModManager.RegisterFeatName(Loader.SotTPrepend + "_" + HobgoblinAncestry + "_StoneFace");
-    public static FeatName HobgoblinOnly_VigorousHealth = ModManager.RegisterFeatName(Loader.SotTPrepend + "_" + HobgoblinAncestry + "_VigorousHealth");
-    public static FeatName HobgoblinOnly_AgonizingRebuke = ModManager.RegisterFeatName(Loader.SotTPrepend + "_" + HobgoblinAncestry + "_AgonizingRebuke");
-    public static FeatName HobgoblinOnly_FormationTraining = ModManager.RegisterFeatName(Loader.SotTPrepend + "_" + HobgoblinAncestry + "_FormationTraining");
-    public static FeatName HobgoblinOnly_HobgoblinWeaponDiscipline = ModManager.RegisterFeatName(Loader.SotTPrepend + "_" + HobgoblinAncestry + "_HobgoblinWeaponDiscipline");
-    public static FeatName HobgoblinOnly_Runtsage = ModManager.RegisterFeatName(Loader.SotTPrepend + "_" + HobgoblinAncestry + "_Runtsage");
-    public static FeatName HobgoblinOnly_PrideInArms = ModManager.RegisterFeatName(Loader.SotTPrepend + "_" + HobgoblinAncestry + "_PrideInArms");
-    public static FeatName HobgoblinOnly_SquadTactics = ModManager.RegisterFeatName(Loader.SotTPrepend + "_" + HobgoblinAncestry + "_SquadTactics");
+    public static FeatName HobgoblinOnly_HobgoblinHeritage_Elfbane = ModManager.RegisterFeatName(Loader.SotTPrepend + "_" + HobgoblinAncestry + "_Elfbane", "Elfbane Hobgoblin");
+    public static FeatName HobgoblinOnly_HobgoblinHeritage_Runtboss = ModManager.RegisterFeatName(Loader.SotTPrepend + "_" + HobgoblinAncestry + "_Runtboss", "Runtboss Hobgoblin");
+    public static FeatName HobgoblinOnly_HobgoblinHeritage_Smokeworker = ModManager.RegisterFeatName(Loader.SotTPrepend + "_" + HobgoblinAncestry + "_Smokeworker", "Smokeworker Hobgoblin");
+    public static FeatName HobgoblinOnly_HobgoblinHeritage_Warrenbred = ModManager.RegisterFeatName(Loader.SotTPrepend + "_" + HobgoblinAncestry + "_Warrenbred", "Warrenbred Hobgoblin");
+    public static FeatName HobgoblinOnly_ContorianReinforcement = ModManager.RegisterFeatName(Loader.SotTPrepend + "_" + HobgoblinAncestry + "_ContorianReinforcement", "Contorian Reinforcement");
+    public static FeatName HobgoblinOnly_HobgoblinLore = ModManager.RegisterFeatName(Loader.SotTPrepend + "_" + HobgoblinAncestry + "_HobgoblinLore", "Hobgoblin Lore");
+    public static FeatName HobgoblinOnly_HobgoblinWeaponFamiliarity = ModManager.RegisterFeatName(Loader.SotTPrepend + "_" + HobgoblinAncestry + "_HobgoblinWeaponFamiliarity", "Hobgoblin Weapon Familiarity");
+    public static FeatName HobgoblinOnly_LeechClip = ModManager.RegisterFeatName(Loader.SotTPrepend + "_" + HobgoblinAncestry + "_Leech-Clip", "Leech-Clip" + RulesBlock.GetIconTextFromNumberOfActions(2));
+    public static FeatName HobgoblinOnly_RemorselessLash = ModManager.RegisterFeatName(Loader.SotTPrepend + "_" + HobgoblinAncestry + "_RemoreselessLash", "Remoreseless Lash");
+    public static FeatName HobgoblinOnly_StoneFace = ModManager.RegisterFeatName(Loader.SotTPrepend + "_" + HobgoblinAncestry + "_StoneFace", "Stone Face");
+    public static FeatName HobgoblinOnly_VigorousHealth = ModManager.RegisterFeatName(Loader.SotTPrepend + "_" + HobgoblinAncestry + "_VigorousHealth", "Vigorous Health");
+    public static FeatName HobgoblinOnly_AgonizingRebuke = ModManager.RegisterFeatName(Loader.SotTPrepend + "_" + HobgoblinAncestry + "_AgonizingRebuke", "Agonizing Rebuke");
+    public static FeatName HobgoblinOnly_FormationTraining = ModManager.RegisterFeatName(Loader.SotTPrepend + "_" + HobgoblinAncestry + "_FormationTraining", "Formation Training");
+    public static FeatName HobgoblinOnly_HobgoblinWeaponDiscipline = ModManager.RegisterFeatName(Loader.SotTPrepend + "_" + HobgoblinAncestry + "_HobgoblinWeaponDiscipline", "Hobgoblin Weapon Discipline");
+    public static FeatName HobgoblinOnly_Runtsage = ModManager.RegisterFeatName(Loader.SotTPrepend + "_" + HobgoblinAncestry + "_Runtsage", "Runtsage");
+    public static FeatName HobgoblinOnly_CantorianRejuvenation = ModManager.RegisterFeatName(Loader.SotTPrepend + "_" + HobgoblinAncestry + "_CantorianRejuvenation", "Cantorian Rejuvenation");
+    public static FeatName HobgoblinOnly_PrideInArms = ModManager.RegisterFeatName(Loader.SotTPrepend + "_" + HobgoblinAncestry + "_PrideInArms", "Pride in Arms " + RulesBlock.GetIconTextFromNumberOfActions(-2));
+    public static FeatName HobgoblinOnly_SquadTactics = ModManager.RegisterFeatName(Loader.SotTPrepend + "_" + HobgoblinAncestry + "_SquadTactics", "Squad Tactics");
 
 
     //Main Loader
@@ -154,7 +159,7 @@ public class Hobgoblin
     public static IEnumerable<Feat> CreateHobgoblinHeritages()
     {
         //registers the hobgoblin heritage: "Elfbane Hobgoblin"
-        yield return new HeritageSelectionFeat(ModManager.RegisterFeatName("HobgoblinHeritage_Elfbane", "Elfbane Hobgoblin"),
+        yield return new HeritageSelectionFeat(HobgoblinOnly_HobgoblinHeritage_Elfbane,
             "Hobgoblins were engineered long ago from the unreliable and fecund goblins to be used as an army against the " +
             "elves. Although the elves ultimately freed the hobgoblins from their bondage, some hobgoblins retain ancestral " +
             "resistance to magic, which they refer to as “elf magic.” You gain the Resist Elf Magic reaction.",
@@ -203,7 +208,7 @@ public class Hobgoblin
             });
 
         //registers the hobgoblin heritage: "Runtboss Hobgoblin"
-        yield return new HeritageSelectionFeat(ModManager.RegisterFeatName("HobgoblinHeritage_Runtboss", "Runtboss Hobgoblin"),
+        yield return new HeritageSelectionFeat(HobgoblinOnly_HobgoblinHeritage_Runtboss,
             "You come from a long line of hobgoblins who commanded goblins. You are smaller than other hobgoblins, but you have no less authority than any other hobgoblin.",
 
             "If you roll a success on an Intimidation check, you get a critical success instead; if you roll a critical failure, you get a failure instead.")
@@ -227,7 +232,7 @@ public class Hobgoblin
             });
 
         //registers the hobgoblin heritage: "Smokeworker Hobgoblin"
-        yield return new HeritageSelectionFeat(ModManager.RegisterFeatName("HobgoblinHeritage_Smokeworker", "Smokeworker Hobgoblin"),
+        yield return new HeritageSelectionFeat(HobgoblinOnly_HobgoblinHeritage_Smokeworker,
             "Your family have been alchemists, engineers, and scientists for generations, laboring on projects that bring smoke and fire to the field of battle.",
             "You gain fire resistance equal to half your level (minimum 1). You automatically succeed at the DC 5 flat check to target a concealed creature if " +
             "that creature is concealed only by smoke.")
@@ -241,7 +246,7 @@ public class Hobgoblin
             });
 
         //registers the hobgoblin heritage: "Warrenbred Hobgoblin"
-        yield return new HeritageSelectionFeat(ModManager.RegisterFeatName("HobgoblinHeritage_Warrenbred", "Warrenbred Hobgoblin"),
+        yield return new HeritageSelectionFeat(HobgoblinOnly_HobgoblinHeritage_Warrenbred,
             "Your ancestors lived underground. Your ears are larger than those of other hobgoblins and sensitive to echoes.",
 
             "When you target an opponent that is concealed from you or hidden from you, you gain a +2 status bonus to the roll. " +
@@ -298,7 +303,7 @@ public class Hobgoblin
         //-------------------------------------------------------------
 
         //adds the Hobgoblin Ancestry Feat "Contorian Reinforcement"
-        yield return new HobgoblinAncestryFeat("Cantorian Reinforcement",
+        yield return new HobgoblinAncestryFeat(HobgoblinOnly_ContorianReinforcement,
             "The life energy that helped create the first hobgoblins is particularly potent in you, protecting you from ongoing maladies.",
 
             "If you roll a success on a saving throw against a disease or poison, you get a critical success instead. If you have a " +
@@ -321,7 +326,7 @@ public class Hobgoblin
             });
 
         //adds the Hobgoblin Ancestry Feat "Hobgoblin Lore"
-        yield return new HobgoblinAncestryFeat("Hobgoblin Lore",
+        yield return new HobgoblinAncestryFeat(HobgoblinOnly_HobgoblinLore,
             "You’ve studied traditional hobgoblin exercises and fieldcraft, all of which have a militaristic bent.",
 
             "You gain the trained proficiency rank in Athletics and Crafting. If you would automatically become " +
@@ -335,7 +340,7 @@ public class Hobgoblin
             });
 
         //adds the Hobgoblin Ancestry Feat "Hobgoblin Weapon Familiarity"
-        yield return new HobgoblinAncestryFeat("Hobgoblin Weapon Familiarity",
+        yield return new HobgoblinAncestryFeat(HobgoblinOnly_HobgoblinWeaponFamiliarity,
             "You gain greater access to weapons specific to your cultural heritage",
 
             "You gain access to all uncommon weapons with the hobgoblin trait. You " +
@@ -369,7 +374,7 @@ public class Hobgoblin
             });
 
         //adds the Hobgoblin Ancestry Feat "Leech-Clip"
-        yield return new HobgoblinAncestryFeat("Leech-Clip " + RulesBlock.GetIconTextFromNumberOfActions(2),
+        yield return new HobgoblinAncestryFeat(HobgoblinOnly_LeechClip,
             "You are trained to capture deserters, or 'leeches.'",
 
             "Make a melee Strike with a weapon from the flail group. On a hit, the target takes a –10-foot status penalty to its Speed (or a –15-foot status penalty " +
@@ -418,7 +423,7 @@ public class Hobgoblin
             });
 
         //adds the Hobgoblin Ancestry Feat "Remorseless Lash"
-        yield return new HobgoblinAncestryFeat("Remorseless Lash",
+        yield return new HobgoblinAncestryFeat(HobgoblinOnly_RemorselessLash,
             "You’re skilled at beating an enemy when their morale is already breaking.",
 
             "When you succeed at a melee weapon Strike against a frightened enemy, that " +
@@ -454,7 +459,7 @@ public class Hobgoblin
             });
 
         //adds the Hobgoblin Ancestry Feat "Stone Face"
-        yield return new HobgoblinAncestryFeat("Stone Face",
+        yield return new HobgoblinAncestryFeat(HobgoblinOnly_StoneFace,
             "You’ve mastered the art of composure, even in the face of fear.",
 
             "You gain a +1 circumstance bonus to saves against effects with the fear trait and a +2 circumstance " +
@@ -486,7 +491,7 @@ public class Hobgoblin
             });
 
         //adds the Hobgoblin Ancestry Feat "Vigorous Health"
-        yield return new HobgoblinAncestryFeat("Vigorous Health",
+        yield return new HobgoblinAncestryFeat(HobgoblinOnly_VigorousHealth,
             "You can withstand blood loss startlingly well.",
 
             "Whenever you would gain the drained condition, you can attempt a DC 17 flat check. On a success, " +
@@ -562,7 +567,7 @@ public class Hobgoblin
         //changes from TT:
         // - changed the effect to be persistent 1d4 mental damage
         // - removed the ending conditions (ends on a regular persistent damage save)
-        yield return new HobgoblinAncestryFeat("Agonizing Rebuke",
+        yield return new HobgoblinAncestryFeat(HobgoblinOnly_AgonizingRebuke,
             "When you terrorize your enemies, you also cause them painful mental distress.",
 
             "When you successfully Demoralize an enemy, that enemy takes a persistent 1d4 mental damage at " +
@@ -616,7 +621,7 @@ public class Hobgoblin
         //changes from TT:
         // - the two allies do not need to be hobgoblins
         // - removed the prerequisite to be trained in all martial weapons.
-        yield return new HobgoblinAncestryFeat("Formation Training",
+        yield return new HobgoblinAncestryFeat(HobgoblinOnly_FormationTraining,
             "You know how to fight in formation with your brethren.",
 
             "When you are adjacent to at least two allies, you gain a +1 circumstance bonus to AC and saving throws. " +
@@ -657,7 +662,7 @@ public class Hobgoblin
             });
 
         //adds the Hobgoblin Ancestry Feat "Hobgoblin Weapon Discipline"
-        yield return new HobgoblinAncestryFeat("Hobgoblin Weapon Discipline",
+        yield return new HobgoblinAncestryFeat(HobgoblinOnly_HobgoblinWeaponDiscipline,
             "You know how to efficiently utilize the weapons soldiers use in close quarters.",
 
             "Whenever you score a critical hit using a weapon of the polearm, spear, or sword group, " +
@@ -686,7 +691,7 @@ public class Hobgoblin
             }); */
 
         //adds the Hobgoblin Ancestry Feat "Runtsage"
-        yield return new HobgoblinAncestryFeat("Runtsage",
+        yield return new HobgoblinAncestryFeat(HobgoblinOnly_Runtsage,
             "Unlike most of your kind, who dismiss goblins as embarrassments or expendable annoyances, you have studied " +
             "the methodology behind their irresponsible and incomprehensible actions.",
 
@@ -711,7 +716,7 @@ public class Hobgoblin
         //-------------------------------------------------------------
 
         //adds the Hobgoblin Ancestry Feat "Cantorian Rejuvenation"
-        yield return new HobgoblinAncestryFeat("Cantorian Rejuvenation",
+        yield return new HobgoblinAncestryFeat(HobgoblinOnly_CantorianRejuvenation,
             "The life-giving energy that flows in your blood revitalizes you.",
 
             "You recover 4d6 Hit Points and gain 10 temporary Hit Points for 1 minute. At 15th level, you instead recover 6d6 HP and gain 15 temporary HP.", 9)
@@ -786,7 +791,7 @@ public class Hobgoblin
             }); */
 
         //adds the Hobgoblin Ancestry Feat "Pride in Arms"
-        yield return new HobgoblinAncestryFeat("Pride in Arms " + RulesBlock.GetIconTextFromNumberOfActions(-2),
+        yield return new HobgoblinAncestryFeat(HobgoblinOnly_PrideInArms,
             "With a shout of triumph, you grant inspiration to an ally fight on.",
 
             "{b}Trigger:{b} An ally within 30 feet brings an enemy to 0 Hit Points. " +
@@ -862,7 +867,7 @@ public class Hobgoblin
             });
 
         //adds the Hobgoblin Ancestry Feat "Cantorian Rejuvenation"
-        yield return new HobgoblinAncestryFeat("Squad Tactics",
+        yield return new HobgoblinAncestryFeat(HobgoblinOnly_SquadTactics,
             "You are adept at working with your allies to surround an enemy.",
             "If an enemy is within reach of you and at least two of your allies, that enemy is off-guard to you.", 9)
             .WithPermanentQEffect("If an enemy is within reach of you and at least two of your allies, that enemy is off-guard to you.",
