@@ -89,6 +89,9 @@ public class Hobgoblin
     public static FeatName HobgoblinOnly_CantorianRejuvenation = ModManager.RegisterFeatName(Loader.SotTPrepend + "_" + HobgoblinAncestry + "_CantorianRejuvenation", "Cantorian Rejuvenation");
     public static FeatName HobgoblinOnly_PrideInArms = ModManager.RegisterFeatName(Loader.SotTPrepend + "_" + HobgoblinAncestry + "_PrideInArms", "Pride in Arms");
     public static FeatName HobgoblinOnly_SquadTactics = ModManager.RegisterFeatName(Loader.SotTPrepend + "_" + HobgoblinAncestry + "_SquadTactics", "Squad Tactics");
+    public static FeatName HobgoblinOnly_CantFallHere = ModManager.RegisterFeatName(Loader.SotTPrepend + "_" + HobgoblinAncestry + "_CantFallHere", "Can't Fall Here");
+    public static FeatName HobgoblinOnly_WarConditioning = ModManager.RegisterFeatName(Loader.SotTPrepend + "_" + HobgoblinAncestry + "_WarConditioning", "War Conditioning");
+    public static FeatName HobgoblinOnly_WeMarchOn = ModManager.RegisterFeatName(Loader.SotTPrepend + "_" + HobgoblinAncestry + "_WeMarchOn", "We March On");
 
 
     //Main Loader
@@ -111,7 +114,7 @@ public class Hobgoblin
         if (ModManager.TryParse("Capturing Spetum", out Trait CapturingSpetumTrait))
             AncestryWeaponTraits.Add(CapturingSpetumTrait);
         if (ModManager.TryParse("Phalanx Piercer", out Trait PhalanxPiercerTrait))
-            AncestryWeaponTraits.Add(CapturingSpetumTrait);
+            AncestryWeaponTraits.Add(PhalanxPiercerTrait);
 
         //creates the traits list
         traits = [Loader.SotTTrait, HobgoblinTrait, Trait.Humanoid, Trait.Uncommon];
@@ -934,6 +937,106 @@ public class Hobgoblin
                             }
                         }
                     };
+                };
+            });
+
+
+        //Level 13 Ancestry Feats
+        //-------------------------------------------------------------
+
+        //adds the Hobgoblin Ancestry Feat "Can't Fall Here"
+        yield return new HobgoblinAncestryFeat(HobgoblinOnly_CantFallHere,
+            "You physically help an ally remain standing and encourage them to push through their pain against dire odds.",
+
+            "{b}Trigger:{b} An adjacent and willing ally would be reduced to 0 HP but not killed.\n" +
+            "Your ally doesn't fall unconscious and remains at 1 Hit Point. The ally also gains a number of temporary Hit Points equal to your level " +
+            "that last for 1 minute. Fighting onward with such an injury isn't without consequence; your ally's wounded condition increases by 1.",
+            13)
+            .WithActionCost(-2)
+            .WithPermanentQEffect("An adjacent and willing ally gains a number of temporary Hit Points equal to your level.",
+            qEffectFeat =>
+            {
+                Creature hobgoblin = qEffectFeat.Owner;
+
+                qEffectFeat.StateCheck = stateCheck =>
+                {
+                    foreach (Creature ally in hobgoblin.Battle.AllCreatures.Where(creature => creature.FriendOfAndNotSelf(hobgoblin)))
+                    {
+                        bool reacted = false;
+
+                        ally.AddQEffect(new QEffect(ExpirationCondition.Ephemeral)
+                        {
+
+                            YouAreDealtLethalDamage = async (qThis, attacker, damage, defender) =>
+                            {
+                                if (!defender.IsAdjacentTo(hobgoblin)) return null;
+                                if (DeathRules.ShouldDieImmediately(defender)) return null;
+
+                                if (!await hobgoblin.AskToUseReaction($"{defender.Name} would be reduced to 0 HP. " +
+                                    $"Use Can't Fall Here to have them remain at 1 Hit Point and give them temporary Hit Points equal to your level?"))
+                                    return null;
+
+                                defender.IncreaseWounded();
+                                defender.Overhead("can't fall here!", Color.Orange,
+                                    $"{defender} stays standing thanks to {hobgoblin}'s Can't Fall Here!");
+
+                                int reducedDamage = defender.HP - 1;
+
+                                if (reducedDamage <= 0) defender.GainTemporaryHP(hobgoblin.Level);
+                                else reacted = true;
+
+                                return new SetToTargetNumberModification(defender.HP - 1, "Can't Fall Here");
+                            },
+
+                            AfterYouTakeDamage = (qf, amount, kind, action, critical) =>
+                            {
+                                if (reacted)
+                                {
+                                    reacted = false;
+                                    qf.Owner.GainTemporaryHP(hobgoblin.Level);
+                                }
+
+                                return Task.CompletedTask;
+                            }
+                        });
+                    }
+                };
+            });
+
+        //adds the Hobgoblin Ancestry Feat "War Conditioning"
+        //  - gets both a swimming speed and the ability to ignore difficult terrain to buff this ability a bit (since there aren't "separate" speeds)
+        yield return new HobgoblinAncestryFeat(HobgoblinOnly_WarConditioning,
+            "You have extensive training in remote environments, allowing you to move through these areas easily.",
+            "When you gain this feat, you gain {r}swimming{/r} and you ignore {r}difficult terrain{/r}.", 13)
+        .WithOnCreature((sheet, hobgoblin) =>
+        {
+            //get swimming
+            hobgoblin.AddQEffect(QEffect.Swimming());
+            hobgoblin.AddQEffect(new QEffect
+            {
+                Id = QEffectId.IgnoresDifficultTerrain
+            });
+        });
+
+        //adds the Hobgoblin Ancestry Feat "We March On"
+        // - homebrew effect that adds a circumstance bonus to speed on the first turn on the encounter for the hobgoblin and all their allies.
+        yield return new HobgoblinAncestryFeat(HobgoblinOnly_WeMarchOn,
+            "You make sure that your allies push themselves while traveling.",
+            "You and your allies gain a +10-foot circumstance bonus to your speeds on the first turn of combat.", 13)
+            .WithPermanentQEffect(qEffectFeat =>
+            {
+                Creature hobgoblin = qEffectFeat.Owner;
+
+                qEffectFeat.StartOfCombat = async _ =>
+                {
+                    foreach (Creature ally in hobgoblin.Battle.AllCreatures.Where(creature => creature.FriendOf(hobgoblin)))
+                    {
+                        ally.AddQEffect(new QEffect("We March On", "You have a +10-foot circumstance bonus to Speed.", ExpirationCondition.ExpiresAtEndOfYourTurn,
+                            hobgoblin, IllustrationName.FleetStep)
+                        {
+                            BonusToAllSpeeds = _ => new Bonus(2, BonusType.Circumstance, "We March On")
+                        });
+                    }
                 };
             });
     }
