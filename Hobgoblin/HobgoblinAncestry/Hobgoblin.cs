@@ -798,7 +798,7 @@ public class Hobgoblin
         yield return new HobgoblinAncestryFeat(HobgoblinOnly_PrideInArms,
             "With a shout of triumph, you grant inspiration to an ally fight on.",
 
-            "{b}Trigger:{b} An ally within 30 feet brings an enemy to 0 Hit Points. " +
+            "{b}Trigger:{b} An ally within 30 feet brings an enemy to 0 Hit Points.\n" +
             "The triggering ally gains temporary Hit Points equal to their Constitution modifier.", 9)
             .WithActionCost(-2)
             .WithPermanentQEffect("An ally within 30 feet that brings an enemy to 0 Hit Points gains temporary Hit Points equal to their Constitution modifier",
@@ -953,7 +953,7 @@ public class Hobgoblin
             "that last for 1 minute. Fighting onward with such an injury isn't without consequence; your ally's wounded condition increases by 1.",
             13)
             .WithActionCost(-2)
-            .WithPermanentQEffect("An adjacent and willing ally gains a number of temporary Hit Points equal to your level.",
+            .WithPermanentQEffect("When an adjacent ally would be reduced to 0 HP, you can keep them at 1 HP and give them temporary Hit Points equal to your level.",
             qEffectFeat =>
             {
                 Creature hobgoblin = qEffectFeat.Owner;
