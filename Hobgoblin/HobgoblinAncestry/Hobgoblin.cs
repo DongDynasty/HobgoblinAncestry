@@ -871,7 +871,7 @@ public class Hobgoblin
                 };
             });
 
-        //adds the Hobgoblin Ancestry Feat "Cantorian Rejuvenation"
+        //adds the Hobgoblin Ancestry Feat "Squad Tactics"
         yield return new HobgoblinAncestryFeat(HobgoblinOnly_SquadTactics,
             "You are adept at working with your allies to surround an enemy.",
             "If an enemy is within reach of you and at least two of your allies, that enemy is off-guard to you.", 9)
